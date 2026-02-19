@@ -1,7 +1,7 @@
 
 # <span style="color: #73B516; font-weight: bold;"> Aproj</span> <span style="color:#AB5116">Platform</span>: Organisez - Analysez - Exécutez.
 
-<p align="center">
+<p align="center" style="background: white">
   <img src="./public/LOGO_fb.png" width="200"/>
 </p>
 
@@ -40,9 +40,6 @@ La plateforme présente plusieurs fonctionnalités clées qui sont:
 * ☘️ Graphiques de performance
 * ☘️Indicateurs d’avancement
 
-
-
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.4.
 
 ## <span style="color: #73B516; font-weight: bold;"> Development server </span>
 
