@@ -1,0 +1,98 @@
+<div class="relative">
+
+  <!-- Header -->
+  <div class="px-10 flex shadow-sm items-center justify-between bg-white md:py-0 py-4">
+
+    <!-- Logo -->
+    <div>
+      <img src="LOGO_fb.png" class="hidden md:block w-32" />
+      <img src="mini_logo.png" class="block md:hidden w-10" />
+    </div>
+
+    <!-- Desktop Menu -->
+    <nav class="hidden md:flex gap-10 font-medium">
+      <a href="#" class="nav-link">
+        <span class="mr-2 text-[#ED8124]"><fa-icon [icon]="faHouse"></fa-icon></span>Accueil
+      </a>
+      <a href="#" class="nav-link">
+        <span class="mr-2 text-[#ED8124]"><fa-icon [icon]="faStar"></fa-icon></span>Fonctionnalités
+      </a>
+      <a href="#" class="nav-link">
+        <span class="mr-2 text-[#ED8124]"><fa-icon [icon]="faTag"></fa-icon></span>Tarifs
+      </a>
+      <a href="#" class="nav-link">
+        <span class="mr-2 text-[#ED8124]"><fa-icon [icon]="faCircleInfo"></fa-icon></span>A propos
+      </a>
+    </nav>
+
+    <!-- Desktop Buttons -->
+    <div class="hidden md:flex gap-6 items-center">
+
+      <!-- CTA Principal : reste toujours "plein" -->
+      <button class="bg-[#ED8124] text-white rounded-full px-6 py-1.5
+                 border-2 border-[#ED8124]
+                 transition duration-300
+                 hover:bg-[#d46f1d] hover:border-[#d46f1d]">
+        S'inscrire
+      </button>
+
+      <!-- Secondaire : simple texte avec underline au hover -->
+      <button class="text-[#73B51B] font-medium
+               border-b-2 border-transparent
+               transition duration-300
+               hover:border-[#73B51B]">
+        Se connecter
+      </button>
+
+    </div>
+
+    <!-- Hamburger Button -->
+    <button class="md:hidden flex flex-col gap-1.5 z-50" (click)="isOpen = !isOpen">
+      <span class="w-6 h-0.5 bg-black transition-all"
+            [class.rotate-45]="isOpen"
+            [class.translate-y-2]="isOpen"></span>
+      <span class="w-6 h-0.5 bg-black transition-all"
+            [class.opacity-0]="isOpen"></span>
+      <span class="w-6 h-0.5 bg-black transition-all"
+            [class.-rotate-45]="isOpen"
+            [class.-translate-y-2]="isOpen"></span>
+    </button>
+
+  </div>
+
+  <!-- Mobile Menu -->
+  <div
+    *ngIf="isOpen"
+    class="md:hidden absolute top-full left-0 w-full bg-white shadow-lg z-40 px-8 py-6 flex flex-col gap-6">
+
+    <!-- Menu Links -->
+    <nav class="flex flex-col gap-4 text-lg font-medium">
+      <a href="#" class="mobile-link">
+        <span class="mr-3 text-[#ED8124]"><fa-icon [icon]="faHouse"></fa-icon></span>Accueil
+      </a>
+      <a href="#" class="mobile-link">
+        <span class="mr-3 text-[#ED8124]"><fa-icon [icon]="faStar"></fa-icon></span>Fonctionnalités
+      </a>
+      <a href="#" class="mobile-link">
+        <span class="mr-3 text-[#ED8124]"><fa-icon [icon]="faTag"></fa-icon></span>Tarifs
+      </a>
+      <a href="#" class="mobile-link">
+        <span class="mr-3 text-[#ED8124]"><fa-icon [icon]="faCircleInfo"></fa-icon></span>A propos
+      </a>
+    </nav>
+
+    <!-- Buttons -->
+    <div class="flex flex-col gap-3">
+      <button
+        class="bg-[#ED8124] text-white rounded-full py-3 font-medium transition hover:bg-[#d46f1d]">
+        S'inscrire
+      </button>
+      <button
+        class="border border-[#73B51B] text-[#73B51B] rounded-full py-3 font-medium transition hover:bg-[#73B51B] hover:text-white">
+        Se connecter
+      </button>
+    </div>
+
+  </div>
+
+</div>

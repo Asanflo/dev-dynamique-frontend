@@ -1,2 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'tailwindcss';
+
+
+.nav-link {
+  @apply relative pb-2 text-black transition-colors duration-300
+  hover:text-[#73B51B]
+  after:content-['']
+  after:absolute
+  after:left-0
+  after:bottom-0
+  after:h-[2px]
+  after:w-full
+  after:bg-[#ED8124]
+  after:scale-x-0
+  after:origin-left
+  after:transition-transform
+  after:duration-300
+  hover:after:scale-x-100;
+}
+
+.mobile-link {
+  @apply flex items-center text-black py-1 px-1 rounded-lg
+  transition-colors duration-300
+  hover:text-[#73B51B] hover:bg-[#73B51B]/10;
+}
