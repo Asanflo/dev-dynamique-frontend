@@ -1,10 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-</head>
-<body>
+<section class="px-6 md:px-12 py-16 md:py-24 lg:px-60">
+  <div class="flex flex-col md:flex-row items-center w-full gap-10 md:gap-12">
 
-</body>
-</html>
+    <!-- IMAGE + SHAPE -->
+    <div class="relative w-full md:w-1/2 flex justify-center"
+         appScrollReveal revealDirection="left" revealDelay="0ms">
+
+      <!-- Forme orange -->
+      <div class="absolute -top-6 -left-6 md:-top-10 md:-left-10 w-28 h-28 md:w-44 md:h-44 bg-[#ED8124] rounded-[40px] -z-10"></div>
+
+      <!-- Image -->
+      <img
+        src="probleme.jpeg"
+        alt="le probleme"
+        class="object-cover rounded-2xl shadow-lg w-full h-56 md:h-auto md:w-[38vw] md:max-w-[500px] md:max-h-[400px]"
+      />
+
+      <!-- Forme verte -->
+      <div class="absolute -bottom-6 -right-6 md:-bottom-10 md:-right-10 w-28 h-28 md:w-44 md:h-44 bg-[#73B51B] rounded-[40px] -z-10"></div>
+
+    </div>
+
+    <!-- TEXTE -->
+    <div class="w-full md:w-1/2 flex flex-col gap-6 text-center md:text-left items-center md:items-start">
+
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-gray-900"
+          appScrollReveal revealDirection="right" revealDelay="100ms">
+        Le <span class="text-[#73B51B]">problème</span>
+      </h1>
+
+      <p class="text-gray-500 text-base text-justify md:text-lg leading-relaxed" appScrollReveal revealDirection="up" revealDelay="200ms">
+        Les équipes perdent du temps à gérer leurs projets avec des outils dispersés.
+        Entre les messages, les fichiers et les feuilles de calcul, l'information devient difficile à suivre. <br>Résultat : manque de visibilité, retards dans les tâches et collaboration inefficace.
+      </p>
+
+      <div class="flex flex-wrap justify-center md:justify-start gap-3 md:gap-4 text-sm font-medium mt-2" appScrollReveal revealDirection="fade" revealDelay="350ms">
+        <span class="px-4 py-1 rounded-full border border-[#ED8124]/30 text-[#ED8124] bg-white">Perte de temps</span>
+        <span class="px-4 py-1 rounded-full border border-[#ED8124]/30 text-[#ED8124] bg-white">Manque de visibilité</span>
+        <span class="px-4 py-1 rounded-full border border-[#ED8124]/30 text-[#ED8124] bg-white">Suivi difficile</span>
+      </div>
+
+    </div>
+
+  </div>
+</section>
