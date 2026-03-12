@@ -1,0 +1,22 @@
+/* Cache la promo bar avec une transition douce */
+.promo-hidden {
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  height: 0;
+}
+
+/* Header fixe en haut une fois la promo bar disparue */
+.header-sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Évite que le contenu se cache sous le header fixe */
+.content-offset {
+  padding-top: 110px;
+}

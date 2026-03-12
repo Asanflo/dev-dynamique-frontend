@@ -1,6 +1,16 @@
-<app-promo-bar></app-promo-bar>
 <div>
-  <app-public-header></app-public-header>
-</div>
+  <!-- Promo Bar : disparaît au scroll -->
+  <div [class.promo-hidden]="isSticky">
+    <app-promo-bar></app-promo-bar>
+  </div>
 
-<router-outlet></router-outlet>
+  <!-- Header : devient fixe quand la promo bar disparaît -->
+  <div [class.header-sticky]="isSticky">
+    <app-public-header></app-public-header>
+  </div>
+
+  <!-- Contenu principal -->
+  <main [class.content-offset]="isSticky">
+    <router-outlet></router-outlet>
+  </main>
+</div>
