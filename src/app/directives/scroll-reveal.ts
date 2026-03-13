@@ -36,7 +36,7 @@ export class ScrollReveal {
         if (entry.isIntersecting) {
           setVisible();
         } else {
-          setHidden(); // 👈 remet l'état initial quand l'élément quitte le viewport
+          setHidden();
         }
       },
       { threshold: 0.15 }

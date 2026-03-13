@@ -2,7 +2,9 @@ import { ScrollReveal } from './scroll-reveal';
 
 describe('ScrollReveal', () => {
   it('should create an instance', () => {
-    const directive = new ScrollReveal();
+    let directive: ScrollReveal;
+    // @ts-ignore
+    directive = new ScrollReveal();
     expect(directive).toBeTruthy();
   });
 });

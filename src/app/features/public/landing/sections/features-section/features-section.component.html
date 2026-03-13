@@ -1,10 +1,48 @@
-<section class="px-3 md:px-6 py-16 md:py-24 lg:px-60">
-  <app-card
-    [icon]="faSadCry"
-    [backgroundImage]="'sec1.jpeg'"
-    [title]="'Mon Titre'"
-    [description]="'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, '">
-  </app-card>
+<section class="px-6 md:px-12 py-16 md:py-24 lg:px-25 overflow-hidden">
 
+  <!-- En-tête -->
+  <div class="flex flex-col gap-3 mb-12">
+    <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-gray-900"
+        appScrollReveal revealDirection="right" revealDelay="100ms">
+      Les différentes<span class="text-[#73B51B]"> Fonctionnalités</span>
+    </h1>
+    <p class="text-gray-500 text-base md:text-lg leading-relaxed max-w-xl"
+       appScrollReveal revealDirection="up" revealDelay="150ms">
+      Découvrez tout ce qu'Aproj met à votre disposition pour simplifier la gestion de vos projets et booster la productivité de votre équipe.
+    </p>
+  </div>
+
+  <div class="flex flex-wrap justify-center gap-16">
+
+    <app-card
+      [icon]="faUsers"
+      [firstImage]="'equipes.jpeg'"
+      [title]="'Collaboration en équipe'"
+      [tip]="'Travail d\'équipe'"
+      [description]="'Invitez vos collaborateurs, assignez des tâches et suivez l\'avancement en temps réel.'"
+      [lien]="'/collaboration'"
+      [badges]="badgesCollaboration">
+    </app-card>
+
+    <app-card
+      [icon]="faCalendarAlt"
+      [firstImage]="'taches.jpeg'"
+      [title]="'Planification des tâches'"
+      [tip]="'Organisation'"
+      [description]="'Créez vos sprints, définissez des échéances et visualisez votre charge de travail.'"
+      [lien]="'/planification'"
+      [badges]="badgesPlanification">
+    </app-card>
+
+    <app-card
+      [icon]="faChartLine"
+      [firstImage]="'reporting.jpeg'"
+      [title]="'Suivi en temps réel'"
+      [tip]="'Reporting'"
+      [description]="'Mesurez la progression de vos projets avec des indicateurs clairs.'"
+      [lien]="'/suivi'"
+      [badges]="badgesSuivi">
+    </app-card>
+
+  </div>
 </section>
-

@@ -1,21 +1,51 @@
-<div>
-  <div>
-    <img src="{{ firstImage }}">
-    <img src="{{ secondImage }}">
-  </div>
-  <div>
-    <div>
-      <fa-icon>{{ icon }}</fa-icon>
-      <p>{{ tip }}</p>
+<!-- Wrapper gère le hover -->
+<div class="group w-80 transition-all duration-300 ease-out hover:-translate-y-3 hover:shadow-xl"
+     style="height: 480px;">
+  <!-- La carte elle-même, sans hover ni transition -->
+  <div class="rounded-2xl bg-white shadow-lg overflow-hidden border border-gray-100 flex flex-col h-full"
+       appScrollReveal revealDirection="up" revealDelay="0ms">
+    <!-- IMAGE + BADGES : 2/3 -->
+    <div class="relative overflow-hidden" style="height: 60%">
+      <img [src]="firstImage" alt="{{ title }}" class="w-full h-full object-cover"
+           appScrollReveal revealDirection="up" revealDelay="50ms">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
+
+      <!-- Badges dynamiques -->
+      <ng-container *ngFor="let badge of badges; let i = index">
+        <div [ngStyle]="badge.position"
+             appScrollReveal revealDirection="fade" [revealDelay]="(i * 100) + 150 + 'ms'"
+             class="h-8 absolute flex items-center gap-1 bg-white/95 backdrop-blur-sm px-2 py-2 rounded-sm shadow-lg border border-gray-100/80 min-w-max">
+          <fa-icon [icon]="badge.icon" [class]="'text-sm ' + (badge.color === 'orange' ? 'text-[#ED8124]' : 'text-[#73B51B]')"></fa-icon>
+          <div class="flex flex-col leading-tight">
+            <span class="text-[11px] font-bold text-gray-800">{{ badge.label }}</span>
+            <span *ngIf="badge.sublabel" class="text-[10px] text-gray-400">{{ badge.sublabel }}</span>
+          </div>
+        </div>
+      </ng-container>
     </div>
-    <h3>{{ title }}</h3>
-    <p>{{ description }}</p>
-    <a href="{{ lien }}"></a>
+
+    <!-- CONTENU : 1/3 -->
+    <div class="flex flex-col justify-between px-5 py-4 flex-1">
+
+      <div class="flex items-center gap-1 justify-end"
+           appScrollReveal revealDirection="fade" revealDelay="50ms">
+        <fa-icon [icon]="icon" class="text-[#73B51B] text-xs"></fa-icon>
+        <span class="text-xs text-[#73B51B] font-semibold border border-[#73B51B]/30 px-2.5 py-0.5 rounded-full">{{ tip }}</span>
+      </div>
+
+      <h3 class="font-extrabold text-lg py-3 text-gray-900 leading-snug"
+          appScrollReveal revealDirection="up" revealDelay="80ms">{{ title }}</h3>
+
+      <p class="text-gray-500 text-sm leading-relaxed line-clamp-3"
+         appScrollReveal revealDirection="up" revealDelay="100ms">{{ description }}</p>
+
+      <a [href]="lien"
+         appScrollReveal revealDirection="left" revealDelay="120ms"
+         class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#ED8124] hover:text-[#d46f1d] transition-colors duration-200 group w-fit">
+        Découvrir
+        <span class="transition-transform duration-200 group-hover:translate-x-1">→</span>
+      </a>
+    </div>
   </div>
 </div>
 
-
-<!--
-ELATE EKOA Ermon Gabriel 𝗪𝗲 𝗮𝗿𝗲 𝗛𝗶𝗿𝗶𝗻𝗴 𝗙𝗼𝗿 𝗦𝘂𝗺𝗺𝗲𝗿
-𝗼𝗻𝗹𝗶𝗻𝗲 𝗜𝗻𝘁𝗲𝗿𝗻𝘀𝗵𝗶𝗽𝘀 𝗔𝘁 𝗖𝗼𝗱𝘁𝗲𝗰𝗵 𝗙𝗼𝗿 𝗠𝘂𝗹𝘁𝗶𝗽𝗹𝗲 𝗗𝗼𝗺𝗮𝗶𝗻𝘀 𝗔𝗽𝗽𝗹𝘆 𝗡𝗼𝘄 : https://codtechitsolutions.in/internship
-https://www.framer.com/workshop/?via=uizun6r&dub_id=pY7s3IRSF00oa3xf#examples -->

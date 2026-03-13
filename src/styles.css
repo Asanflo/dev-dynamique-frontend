@@ -1,6 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'tailwindcss';
 
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
 
 .nav-link {
   @apply relative pb-2 text-black transition-colors duration-300
