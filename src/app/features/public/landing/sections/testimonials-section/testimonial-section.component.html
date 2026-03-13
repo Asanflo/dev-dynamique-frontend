@@ -1,10 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-</head>
-<body>
+<section class="px-6 md:px-12 py-16 md:py-24 lg:px-25 overflow-hidden">
 
-</body>
-</html>
+  <!-- En tête -->
+  <div class="flex flex-wrap justify-center">
+    <div class="flex flex-col gap-3 mb-12 items-center text-center">
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-gray-900"
+          appScrollReveal revealDirection="right" revealDelay="100ms">
+        Les retours d'<span class="text-[#73B51B]">expérience</span>
+      </h1>
+      <p class="text-gray-500 text-base md:text-lg leading-relaxed max-w-xl"
+         appScrollReveal revealDirection="up" revealDelay="150ms">
+        Nos utilisateurs expliquent comment la plateforme leur permet de gagner en organisation,
+        en visibilité et en efficacité dans leurs projets.
+      </p>
+      <div class="flex flex-row text-[12px] gap-2 py-1 px-2 bg-gray-300 rounded-2xl w-42 justify-center">
+        <fa-icon [icon]="faStar" class="text-[#ED8124]"></fa-icon>
+        <p class="font-semibold">4.5 <span class="text-gray-400"> de + 1000 boîtes</span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonies -->
+  <div class="relative overflow-hidden" style="height: 700px;
+       mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+       -webkit-mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);">
+
+    <div class="flex gap-5 justify-center">
+
+      <!-- Colonne 1 : scroll vers le haut -->
+      <div class="flex flex-col gap-3 scroll-col-up">
+        <!-- Bloc original -->
+        <app-testi-card [entrepriseLogo]="'sec1.jpeg'" [testimonial]="'Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu\'il est prêt ou que la mise en page est achevée.'" [userProfile]="'sec2.jpeg'" [userName]="'Luc Ngono'" [userRole]="'CEO centralBank'"></app-testi-card>
+        <app-testi-card [entrepriseLogo]="'sec1.jpeg'" [testimonial]="'Le lorem ipsum est, en imprimerie, une suite de mots sans signification'" [userProfile]="'sec2.jpeg'" [userName]="'Luc Ngono'" [userRole]="'CEO centralBank'"></app-testi-card>
+        <app-testi-card [entrepriseLogo]="'sec1.jpeg'" [testimonial]="'Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu\'il est prêt ou que la mise en page est achevée.'" [userProfile]="'sec2.jpeg'" [userName]="'Luc Ngono'" [userRole]="'CEO centralBank'"></app-testi-card>
+        <app-testi-card [entrepriseLogo]="'sec1.jpeg'" [testimonial]="'Le lorem ipsum est, en imprimerie, une suite de mots sans signification'" [userProfile]="'sec2.jpeg'" [userName]="'Luc Ngono'" [userRole]="'CEO centralBank'"></app-testi-card>
+        <app-testi-card [entrepriseLogo]="'sec1.jpeg'" [testimonial]="'Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page.'" [userProfile]="'sec2.jpeg'" [userName]="'Luc Ngono'" [userRole]="'CEO centralBank'"></app-testi-card>
+        <!-- Bloc dupliqué (obligatoire pour la boucle infinie) -->
+        <app-testi-card [entrepriseLogo]="'sec1.jpeg'" [testimonial]="'Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu\'il est prêt ou que la mise en page est achevée.'" [userProfile]="'sec2.jpeg'" [userName]="'Luc Ngono'" [userRole]="'CEO centralBank'"></app-testi-card>
+        <app-testi-card [entrepriseLogo]="'sec1.jpeg'" [testimonial]="'Le lorem ipsum est, en imprimerie, une suite de mots sans signification'" [userProfile]="'sec2.jpeg'" [userName]="'Luc Ngono'" [userRole]="'CEO centralBank'"></app-testi-card>
+        <app-testi-card [entrepriseLogo]="'sec1.jpeg'" [testimonial]="'Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu\'il est prêt ou que la mise en page est achevée.'" [userProfile]="'sec2.jpeg'" [userName]="'Luc Ngono'" [userRole]="'CEO centralBank'"></app-testi-card>
+        <app-testi-card [entrepriseLogo]="'sec1.jpeg'" [testimonial]="'Le lorem ipsum est, en imprimerie, une suite de mots sans signification'" [userProfile]="'sec2.jpeg'" [userName]="'Luc Ngono'" [userRole]="'CEO centralBank'"></app-testi-card>
+        <app-testi-card [entrepriseLogo]="'sec1.jpeg'" [testimonial]="'Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page.'" [userProfile]="'sec2.jpeg'" [userName]="'Luc Ngono'" [userRole]="'CEO centralBank'"></app-testi-card>
+      </div>
+
+      <!-- Colonne 2 : scroll vers le bas (sens inverse) -->
+      <div class="flex flex-col gap-3 scroll-col-down">
+        <!-- Bloc original -->
+        <app-testi-card [entrepriseLogo]="'sec1.jpeg'" [testimonial]="'Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu\'il est prêt ou que la mise en page est achevée.'" [userProfile]="'sec2.jpeg'" [userName]="'Luc Ngono'" [userRole]="'CEO centralBank'"></app-testi-card>
+        <app-testi-card [entrepriseLogo]="'sec1.jpeg'" [testimonial]="'Le lorem ipsum est, en imprimerie, une suite de mots sans signification'" [userProfile]="'sec2.jpeg'" [userName]="'Luc Ngono'" [userRole]="'CEO centralBank'"></app-testi-card>
+        <app-testi-card [entrepriseLogo]="'sec1.jpeg'" [testimonial]="'Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu\'il est prêt ou que la mise en page est achevée.'" [userProfile]="'sec2.jpeg'" [userName]="'Luc Ngono'" [userRole]="'CEO centralBank'"></app-testi-card>
+        <app-testi-card [entrepriseLogo]="'sec1.jpeg'" [testimonial]="'Le lorem ipsum est, en imprimerie, une suite de mots sans signification'" [userProfile]="'sec2.jpeg'" [userName]="'Luc Ngono'" [userRole]="'CEO centralBank'"></app-testi-card>
+        <app-testi-card [entrepriseLogo]="'sec1.jpeg'" [testimonial]="'Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page.'" [userProfile]="'sec2.jpeg'" [userName]="'Luc Ngono'" [userRole]="'CEO centralBank'"></app-testi-card>
+        <!-- Bloc dupliqué -->
+        <app-testi-card [entrepriseLogo]="'sec1.jpeg'" [testimonial]="'Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu\'il est prêt ou que la mise en page est achevée.'" [userProfile]="'sec2.jpeg'" [userName]="'Luc Ngono'" [userRole]="'CEO centralBank'"></app-testi-card>
+        <app-testi-card [entrepriseLogo]="'sec1.jpeg'" [testimonial]="'Le lorem ipsum est, en imprimerie, une suite de mots sans signification'" [userProfile]="'sec2.jpeg'" [userName]="'Luc Ngono'" [userRole]="'CEO centralBank'"></app-testi-card>
+        <app-testi-card [entrepriseLogo]="'sec1.jpeg'" [testimonial]="'Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu\'il est prêt ou que la mise en page est achevée.'" [userProfile]="'sec2.jpeg'" [userName]="'Luc Ngono'" [userRole]="'CEO centralBank'"></app-testi-card>
+        <app-testi-card [entrepriseLogo]="'sec1.jpeg'" [testimonial]="'Le lorem ipsum est, en imprimerie, une suite de mots sans signification'" [userProfile]="'sec2.jpeg'" [userName]="'Luc Ngono'" [userRole]="'CEO centralBank'"></app-testi-card>
+        <app-testi-card [entrepriseLogo]="'sec1.jpeg'" [testimonial]="'Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page.'" [userProfile]="'sec2.jpeg'" [userName]="'Luc Ngono'" [userRole]="'CEO centralBank'"></app-testi-card>
+      </div>
+
+      <!-- Colonne 3 : scroll vers le haut -->
+      <div class="flex flex-col gap-3 scroll-col-up">
+        <!-- Bloc original -->
+        <app-testi-card [entrepriseLogo]="'sec1.jpeg'" [testimonial]="'Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu\'il est prêt ou que la mise en page est achevée.'" [userProfile]="'sec2.jpeg'" [userName]="'Luc Ngono'" [userRole]="'CEO centralBank'"></app-testi-card>
+        <app-testi-card [entrepriseLogo]="'sec1.jpeg'" [testimonial]="'Le lorem ipsum est, en imprimerie, une suite de mots sans signification'" [userProfile]="'sec2.jpeg'" [userName]="'Luc Ngono'" [userRole]="'CEO centralBank'"></app-testi-card>
+        <app-testi-card [entrepriseLogo]="'sec1.jpeg'" [testimonial]="'Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu\'il est prêt ou que la mise en page est achevée.'" [userProfile]="'sec2.jpeg'" [userName]="'Luc Ngono'" [userRole]="'CEO centralBank'"></app-testi-card>
+        <app-testi-card [entrepriseLogo]="'sec1.jpeg'" [testimonial]="'Le lorem ipsum est, en imprimerie, une suite de mots sans signification'" [userProfile]="'sec2.jpeg'" [userName]="'Luc Ngono'" [userRole]="'CEO centralBank'"></app-testi-card>
+        <app-testi-card [entrepriseLogo]="'sec1.jpeg'" [testimonial]="'Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page.'" [userProfile]="'sec2.jpeg'" [userName]="'Luc Ngono'" [userRole]="'CEO centralBank'"></app-testi-card>
+        <!-- Bloc dupliqué -->
+        <app-testi-card [entrepriseLogo]="'sec1.jpeg'" [testimonial]="'Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu\'il est prêt ou que la mise en page est achevée.'" [userProfile]="'sec2.jpeg'" [userName]="'Luc Ngono'" [userRole]="'CEO centralBank'"></app-testi-card>
+        <app-testi-card [entrepriseLogo]="'sec1.jpeg'" [testimonial]="'Le lorem ipsum est, en imprimerie, une suite de mots sans signification'" [userProfile]="'sec2.jpeg'" [userName]="'Luc Ngono'" [userRole]="'CEO centralBank'"></app-testi-card>
+        <app-testi-card [entrepriseLogo]="'sec1.jpeg'" [testimonial]="'Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu\'il est prêt ou que la mise en page est achevée.'" [userProfile]="'sec2.jpeg'" [userName]="'Luc Ngono'" [userRole]="'CEO centralBank'"></app-testi-card>
+        <app-testi-card [entrepriseLogo]="'sec1.jpeg'" [testimonial]="'Le lorem ipsum est, en imprimerie, une suite de mots sans signification'" [userProfile]="'sec2.jpeg'" [userName]="'Luc Ngono'" [userRole]="'CEO centralBank'"></app-testi-card>
+        <app-testi-card [entrepriseLogo]="'sec1.jpeg'" [testimonial]="'Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page.'" [userProfile]="'sec2.jpeg'" [userName]="'Luc Ngono'" [userRole]="'CEO centralBank'"></app-testi-card>
+      </div>
+
+    </div>
+  </div>
+
+</section>

@@ -1,13 +1,34 @@
-<div>
-  <div>
-    <img src="{{entrepriseLogo}}">
-    <p>{{testimonial}}</p>
-  </div>
-  <div>
-    <img src="{{userProfile}}">
-    <div>
-      <h4>{{userName}}</h4>
-      <p>{{userRole}}</p>
+<div class="bg-white border border-gray-100 rounded-2xl p-5 w-80 flex flex-col gap-4 shadow-[0_2px_8px_rgba(0,0,0,0.15)]">
+
+  <!-- Logo + Témoignage -->
+  <div class="flex flex-col gap-3">
+    <div class="flex items-center justify-between">
+      <!-- Badge tip (cohérent avec app-card) -->
+      <span class="text-xs text-[#73B51B] font-semibold px-2.5 py-0.5">
+        Témoignage
+      </span>
+      <img [src]="entrepriseLogo" class="w-10 h-10 rounded-xl object-contain border border-gray-100" alt="logo entreprise">
     </div>
+    <p class="text-sm text-gray-500 leading-relaxed pl-3 relative">
+      <span class="absolute left-0 -top-1 text-3xl leading-none text-gray-200 font-serif">"</span>
+      {{ testimonial }}
+    </p>
   </div>
+
+  <!-- Séparateur -->
+  <hr class="border-gray-100">
+
+  <!-- Profil utilisateur + lien -->
+  <div class="flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <img [src]="userProfile" class="w-10 h-10 rounded-full object-cover flex-shrink-0 border border-gray-100" alt="logo utilisateur">
+      <div class="flex flex-col gap-0.5">
+        <h4 class="text-sm font-extrabold text-gray-900">{{ userName }}</h4>
+        <p class="text-[10px] text-gray-400">{{ userRole }}</p>
+      </div>
+    </div>
+
+
+  </div>
+
 </div>
