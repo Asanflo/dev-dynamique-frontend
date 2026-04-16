@@ -1,0 +1,562 @@
+/* ============================================================
+   AUTH PAGES — Aproj design system
+   Partagé par login.component et register.component
+   ============================================================ */
+
+/* ── Layout split-screen ─────────────────────────────────── */
+.auth-page {
+  display: flex;
+  min-height: 100vh;
+  overflow-x: clip;
+}
+
+/* ── PANNEAU GAUCHE (décoratif) ──────────────────────────── */
+.auth-panel {
+  display: none;
+  position: relative;
+  width: 45%;
+  background: #f8f9fa;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+@media (min-width: 1024px) {
+  .auth-panel {
+    display: flex;
+  }
+}
+
+/* Blobs */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(72px);
+}
+
+.blob-1 {
+  width: 420px;
+  height: 420px;
+  top: -100px;
+  right: -80px;
+  background: #73B51B;
+  opacity: 0.18;
+}
+
+.blob-2 {
+  width: 320px;
+  height: 320px;
+  bottom: -60px;
+  left: -60px;
+  background: #ED8124;
+  opacity: 0.13;
+}
+
+/* Dot grid */
+.dot-grid {
+  position: absolute;
+  bottom: 40px;
+  right: 30px;
+  width: 160px;
+  height: 160px;
+  background-image: radial-gradient(#73B51B 1.5px, transparent 1.5px);
+  background-size: 18px 18px;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+/* Contenu du panel */
+.panel-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 3rem 3rem 3.5rem;
+  width: 100%;
+  gap: 2.5rem;
+}
+
+.panel-logo {
+  flex-shrink: 0;
+}
+
+.panel-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  flex: 1;
+  justify-content: center;
+}
+
+.panel-title {
+  font-size: clamp(1.6rem, 2.5vw, 2.25rem);
+  font-weight: 800;
+  color: #111827;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.panel-accent {
+  color: #73B51B;
+}
+
+.panel-sub {
+  font-size: 0.95rem;
+  color: #6b7280;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Témoignage */
+.panel-quote {
+  background: #fff;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+
+.quote-icon {
+  color: #ED8124;
+  opacity: 0.6;
+}
+
+.quote-text {
+  font-size: 0.875rem;
+  color: #374151;
+  line-height: 1.6;
+  font-style: italic;
+  margin: 0;
+}
+
+.quote-author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.author-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #73B51B, #5a9c12);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.author-name {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.author-role {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin: 0;
+}
+
+/* Features list (page connexion) */
+.panel-features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.panel-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.feature-check {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(115, 181, 27, 0.12);
+  color: #73B51B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Stats */
+.panel-stats {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1rem 1.25rem;
+  background: #fff;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  flex: 1;
+}
+
+.stat-number {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: #111827;
+  letter-spacing: -0.03em;
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  color: #9ca3af;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 32px;
+  background: #e5e7eb;
+  flex-shrink: 0;
+}
+
+/* ── PANNEAU DROIT (formulaire) ──────────────────────────── */
+.auth-form-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1.5rem;
+  background: #fff;
+  position: relative;
+  overflow-y: auto;
+}
+
+@media (min-width: 640px) {
+  .auth-form-panel {
+    padding: 3rem 2.5rem;
+  }
+}
+
+/* Lien retour */
+.back-link {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.82rem;
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.back-link:hover {
+  color: #73B51B;
+}
+
+/* Conteneur formulaire */
+.form-container {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  animation: fadeSlideUp 0.4s ease both;
+}
+
+/* Header formulaire */
+.form-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-logo-mobile {
+  width: 40px;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+@media (min-width: 1024px) {
+  .form-logo-mobile {
+    display: none;
+  }
+}
+
+.form-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.form-sub {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+.form-switch-link {
+  color: #73B51B;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+
+.form-switch-link:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* ── Formulaire ──────────────────────────────────────────── */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+/* Champ */
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.field-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.field-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.forgot-link {
+  font-size: 0.78rem;
+  color: #9ca3af;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.forgot-link:hover {
+  color: #73B51B;
+}
+
+.field-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.field-icon {
+  position: absolute;
+  left: 12px;
+  color: #9ca3af;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.field-input {
+  width: 100%;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 10px 12px 10px 38px;
+  font-size: 0.875rem;
+  color: #111827;
+  background: #fafafa;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  box-sizing: border-box;
+}
+
+.field-input:focus {
+  border-color: #73B51B;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(115, 181, 27, 0.12);
+}
+
+.field-input::placeholder {
+  color: #c4c9d4;
+}
+
+/* Bouton œil (mot de passe) */
+.field-eye {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  transition: color 0.15s;
+}
+
+.field-eye:hover {
+  color: #374151;
+}
+
+/* Force du mot de passe */
+.password-strength {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.strength-bars {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+}
+
+.strength-bar {
+  height: 3px;
+  flex: 1;
+  border-radius: 2px;
+  background: #e5e7eb;
+  transition: background 0.3s;
+}
+
+.strength-bar.active.weak   { background: #ef4444; }
+.strength-bar.active.medium { background: #ED8124; }
+.strength-bar.active.strong { background: #73B51B; }
+
+.strength-label {
+  font-size: 0.72rem;
+  color: #ef4444;
+  font-weight: 600;
+  min-width: 36px;
+}
+
+.strength-label.medium { color: #ED8124; }
+.strength-label.strong { color: #73B51B; }
+
+/* Checkbox */
+.field-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+}
+
+.checkbox-input {
+  width: 16px;
+  height: 16px;
+  accent-color: #73B51B;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.checkbox-label {
+  font-size: 0.8rem;
+  color: #6b7280;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+/* ── Bouton submit ───────────────────────────────────────── */
+.btn-submit {
+  width: 100%;
+  padding: 12px 24px;
+  border-radius: 999px;
+  background: #ED8124;
+  color: #fff;
+  border: 2px solid #ED8124;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(237, 129, 36, 0.3);
+  margin-top: 0.5rem;
+}
+
+.btn-submit:hover {
+  background: #d46f1d;
+  border-color: #d46f1d;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(237, 129, 36, 0.4);
+}
+
+/* ── Séparateur ─────────────────────────────────────────── */
+.or-divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.or-line {
+  flex: 1;
+  height: 1px;
+  background: #e5e7eb;
+}
+
+.or-text {
+  font-size: 0.78rem;
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+/* ── Bouton OAuth ───────────────────────────────────────── */
+.btn-oauth {
+  width: 100%;
+  padding: 11px 20px;
+  border-radius: 999px;
+  background: #fff;
+  color: #374151;
+  border: 1.5px solid #e5e7eb;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.btn-oauth:hover {
+  border-color: #d1d5db;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  transform: translateY(-1px);
+}
+
+/* ── Animation ──────────────────────────────────────────── */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

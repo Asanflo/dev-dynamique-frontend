@@ -1,0 +1,259 @@
+/* ============================================================
+   FOOTER — Aproj design system
+   ============================================================ */
+
+footer.footer {
+  background: #fff;
+  border-top: 1.5px solid #f3f4f6;
+  padding: 3rem 1.5rem 1.5rem;
+}
+
+@media (min-width: 640px) {
+  footer.footer {
+    padding: 3.5rem 3rem 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  footer.footer {
+    padding: 4rem 5rem 1.75rem;
+  }
+}
+
+/* ============================================================
+   PARTIE HAUTE
+   ============================================================ */
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .footer-top {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+}
+
+/* Colonne brand */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.footer-logo img {
+  height: auto;
+}
+
+.footer-tagline {
+  font-size: 0.9rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.footer-tagline strong {
+  color: #111827;
+  font-weight: 700;
+}
+
+/* Réseaux sociaux */
+.social-links {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: 0.25rem;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #f3f4f6;
+  color: #6b7280;
+  border: 1.5px solid transparent;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.social-btn:hover {
+  background: rgba(237, 129, 36, 0.08);
+  color: #ED8124;
+  border-color: rgba(237, 129, 36, 0.3);
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+.footer-nav {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.footer-nav-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-width: 130px;
+}
+
+.footer-nav-col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.footer-nav-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #111827;
+  margin: 0;
+}
+
+.footer-link {
+  font-size: 0.875rem;
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.15s ease;
+  position: relative;
+  width: fit-content;
+}
+
+.footer-link::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: #ED8124;
+  border-radius: 2px;
+  transition: width 0.2s ease;
+}
+
+.footer-link:hover {
+  color: #73B51B;
+}
+
+.footer-link:hover::after {
+  width: 100%;
+}
+
+/* ============================================================
+   CTA
+   ============================================================ */
+.footer-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-width: 160px;
+}
+
+.footer-btn-primary {
+  background: #ED8124;
+  color: #fff;
+  border: 2px solid #ED8124;
+  border-radius: 999px;
+  padding: 10px 24px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.footer-btn-primary:hover {
+  background: #d46f1d;
+  border-color: #d46f1d;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(237, 129, 36, 0.35);
+}
+
+.footer-btn-secondary {
+  background: transparent;
+  color: #73B51B;
+  border: 1.5px solid #73B51B;
+  border-radius: 999px;
+  padding: 10px 24px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.footer-btn-secondary:hover {
+  background: #73B51B;
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(115, 181, 27, 0.25);
+}
+
+/* ============================================================
+   SÉPARATEUR + PARTIE BASSE
+   ============================================================ */
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background: #f3f4f6;
+  margin: 2.5rem 0 1.25rem;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+@media (min-width: 640px) {
+  .footer-bottom {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.footer-copy {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.footer-legal {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-legal-link {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.footer-legal-link:hover {
+  color: #374151;
+}
+
+.footer-dot {
+  font-size: 0.8rem;
+  color: #d1d5db;
+}
