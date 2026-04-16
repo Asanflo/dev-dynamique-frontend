@@ -11,17 +11,17 @@
 
     <!-- Desktop Menu -->
     <nav class="hidden md:flex gap-10 font-medium">
-      <a href="#" class="nav-link">
+      <a (click)="scrollTo('hero')" class="nav-link">
         <span class="mr-2 text-[#ED8124]"><fa-icon [icon]="faHouse"></fa-icon></span>Accueil
       </a>
-      <a href="#" class="nav-link">
+      <a (click)="scrollTo('features')" class="nav-link">
         <span class="mr-2 text-[#ED8124]"><fa-icon [icon]="faStar"></fa-icon></span>Fonctionnalités
       </a>
-      <a href="#" class="nav-link">
+      <a (click)="scrollTo('pricing')" class="nav-link">
         <span class="mr-2 text-[#ED8124]"><fa-icon [icon]="faTag"></fa-icon></span>Tarifs
       </a>
-      <a href="#" class="nav-link">
-        <span class="mr-2 text-[#ED8124]"><fa-icon [icon]="faCircleInfo"></fa-icon></span>A propos
+      <a (click)="scrollTo('about')" class="nav-link">
+        <span class="mr-2 text-[#ED8124]"><fa-icon [icon]="faCircleInfo"></fa-icon></span>À propos
       </a>
     </nav>
 
@@ -64,16 +64,16 @@
 
     <!-- Menu Links -->
     <nav class="flex flex-col gap-4 text-lg font-medium">
-      <a href="#" class="mobile-link">
+      <a (click)="scrollTo('hero')" class="mobile-link">
         <span class="mr-3 text-[#ED8124]"><fa-icon [icon]="faHouse"></fa-icon></span>Accueil
       </a>
-      <a href="#" class="mobile-link">
+      <a (click)="scrollTo('features')" class="mobile-link">
         <span class="mr-3 text-[#ED8124]"><fa-icon [icon]="faStar"></fa-icon></span>Fonctionnalités
       </a>
-      <a href="#" class="mobile-link">
+      <a (click)="scrollTo('pricing')" class="mobile-link">
         <span class="mr-3 text-[#ED8124]"><fa-icon [icon]="faTag"></fa-icon></span>Tarifs
       </a>
-      <a href="#" class="mobile-link">
+      <a (click)="scrollTo('about')" class="mobile-link">
         <span class="mr-3 text-[#ED8124]"><fa-icon [icon]="faCircleInfo"></fa-icon></span>A propos
       </a>
     </nav>

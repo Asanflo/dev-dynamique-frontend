@@ -17,4 +17,17 @@ export class PublicHeaderComponent{
   faStar = faStar;
   faTag = faTag;
   faCircleInfo = faCircleInfo;
+
+  scrollTo(section: string) {
+    const element = document.getElementById(section);
+    if (element) {
+      const offset = 30; // hauteur du header
+      const y = element.getBoundingClientRect().top + window.scrollY - offset;
+
+      window.scrollTo({
+        top: y,
+        behavior: 'smooth'
+      });
+    }
+  }
 }

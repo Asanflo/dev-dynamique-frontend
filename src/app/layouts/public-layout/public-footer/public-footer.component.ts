@@ -11,4 +11,17 @@ import {RouterLink} from '@angular/router';
 })
 export class PublicFooterComponent {
   currentYear = new Date().getFullYear();
+
+  scrollTo(section: string){
+    const element = document.getElementById(section);
+    if(element){
+      const offset = 30 //hauteur du header
+      const y = element.getBoundingClientRect().top + window.scrollY -offset;
+
+      window.scrollTo({
+        top: y,
+        behavior: 'smooth'
+      });
+    }
+  }
 }
